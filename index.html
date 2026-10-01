@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サバイバル勉強ノート</title>
+<meta name="description" content="サバイバルの知識を学びながら、進捗・漫画・コラムを記録する勉強サイト。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#008b8b;
+  --teal-deep:#00605f;
+  --teal-pale:#e3f4f3;
+  --paper:#f6fbfb;
+  --ink:#10302f;
+  --pine:#f5b82e;
+  --leaf:#2e9e5b;
+  --line:#b7dcdb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;line-height:1.85;font-size:16px}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.site{background:var(--teal);color:#fff}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:900;font-size:1.1rem;text-decoration:none;letter-spacing:.04em}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.18)}
+nav a[aria-current="page"]{background:#fff;color:var(--teal-deep)}
+
+.hero{background:var(--teal);color:#fff;padding:24px 0 72px;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.3;margin:0 0 16px;font-weight:900}
+.hero p{margin:0 0 24px;max-width:30em;font-size:1.05rem}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:10px 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid #fff}
+.btn.fill{background:var(--pine);border-color:var(--pine);color:var(--ink)}
+.btn.fill:hover{background:#ffd05a}
+.btn.line:hover{background:rgba(255,255,255,.16)}
+.pine{width:100%;max-width:300px;justify-self:center;display:block}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0,95% 60%,90% 10%,85% 70%,80% 20%,75% 75%,70% 15%,65% 70%,60% 10%,55% 65%,50% 15%,45% 70%,40% 20%,35% 75%,30% 15%,25% 70%,20% 10%,15% 65%,10% 15%,5% 70%,0 20%)}
+
+section{padding:56px 0 8px}
+h2{font-size:1.6rem;margin:0 0 8px;font-weight:900;color:var(--teal-deep)}
+.lead{margin:0 0 28px;max-width:38em}
+
+.themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;border-top:2px solid var(--teal)}
+.theme{padding:18px 8px 18px 0;border-bottom:1px solid var(--line)}
+.theme h3{margin:0 0 2px;font-size:1.1rem}
+.theme p{margin:0;font-size:.95rem}
+
+.rule{background:var(--teal-pale);border-radius:20px;padding:28px 28px 24px;margin-top:8px}
+.rule ol{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.rule li{background:#fff;border-radius:14px;padding:14px 16px;border-left:6px solid var(--teal)}
+.rule li strong{display:block;font-size:1.5rem;color:var(--teal-deep);line-height:1.3}
+.rule li:nth-child(1){border-left-color:var(--leaf)}
+.rule li:nth-child(2){border-left-color:var(--teal)}
+.rule li:nth-child(3){border-left-color:#2a7fa6}
+.rule li:nth-child(4){border-left-color:var(--pine)}
+.note{font-size:.88rem;margin:16px 0 0}
+
+.log{list-style:none;margin:0;padding:0;max-width:640px}
+.log li{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.log time{font-weight:700;color:var(--teal-deep)}
+.more{display:inline-block;margin-top:16px;font-weight:700;color:var(--teal-deep)}
+
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.links a{display:block;text-decoration:none;border:2px solid var(--teal);border-radius:18px;padding:20px 22px;background:#fff}
+.links a:hover{background:var(--teal);color:#fff}
+.links h3{margin:0 0 4px;font-size:1.15rem}
+.links p{margin:0;font-size:.95rem}
+
+footer{margin-top:72px;background:var(--teal-deep);color:#e8f7f6;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .hero .wrap{grid-template-columns:1fr}
+  .pine{max-width:200px;order:-1}
+  .log li{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">サバイバル勉強ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html" aria-current="page">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>生き延びる知恵を、<br>ゆっくり学ぶ。</h1>
+      <p>火・水・寝床・食べ物・応急手当。サバイバルの基本を勉強しながら、進捗の記録、漫画やイラスト、ちょっとしたコラムをまとめていくノートです。</p>
+      <div class="btns">
+        <a class="btn fill" href="blog.html">勉強の記録を見る</a>
+        <a class="btn line" href="column.html">コラムを読む</a>
+      </div>
+    </div>
+
+    <svg class="pine" viewBox="0 0 200 290" role="img" aria-label="パイナップルのイラスト">
+      <defs>
+        <clipPath id="body"><ellipse cx="100" cy="190" rx="64" ry="82"/></clipPath>
+      </defs>
+      <!-- leaves -->
+      <path d="M100 120 C82 80 90 40 100 8 C110 40 118 80 100 120Z" fill="#2e9e5b" stroke="#1b6b3c" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M96 122 C58 98 44 62 50 30 C80 48 96 84 96 122Z" fill="#35b36a" stroke="#1b6b3c" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M104 122 C142 98 156 62 150 30 C120 48 104 84 104 122Z" fill="#35b36a" stroke="#1b6b3c" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M92 128 C52 124 22 106 14 82 C50 82 80 100 92 128Z" fill="#2e9e5b" stroke="#1b6b3c" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M108 128 C148 124 178 106 186 82 C150 82 120 100 108 128Z" fill="#2e9e5b" stroke="#1b6b3c" stroke-width="3" stroke-linejoin="round"/>
+      <!-- body -->
+      <ellipse cx="100" cy="190" rx="64" ry="82" fill="#f5b82e"/>
+      <g clip-path="url(#body)" stroke="#c98412" stroke-width="3" fill="none">
+        <path d="M20 120 L180 280 M20 160 L140 280 M20 200 L100 280 M60 108 L180 228 M100 108 L180 188 M20 80 L180 240"/>
+        <path d="M180 120 L20 280 M180 160 L60 280 M180 200 L100 280 M140 108 L20 228 M100 108 L20 188 M180 80 L20 240"/>
+      </g>
+      <g fill="#8a5410">
+        <circle cx="100" cy="150" r="3"/><circle cx="76" cy="174" r="3"/><circle cx="124" cy="174" r="3"/>
+        <circle cx="100" cy="198" r="3"/><circle cx="76" cy="222" r="3"/><circle cx="124" cy="222" r="3"/>
+        <circle cx="100" cy="246" r="3"/>
+      </g>
+      <ellipse cx="100" cy="190" rx="64" ry="82" fill="none" stroke="#a96a12" stroke-width="4"/>
+      <path d="M62 150 C58 170 60 190 66 206" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<section id="themes">
+  <div class="wrap">
+    <h2>勉強しているテーマ</h2>
+    <p class="lead">まずは基本の6つから。わかったことは、ブログとコラムに少しずつ書き足していきます。</p>
+    <div class="themes">
+      <div class="theme"><h3>水の確保</h3><p>水源の探し方、煮沸と浄水のしくみ。</p></div>
+      <div class="theme"><h3>火おこし</h3><p>焚き付け・薪の組み方、火を安全に使うこと。</p></div>
+      <div class="theme"><h3>シェルター</h3><p>体温を守る寝床づくりと場所選び。</p></div>
+      <div class="theme"><h3>食料</h3><p>保存食、食べられる野草と避けるべきもの。</p></div>
+      <div class="theme"><h3>方角と地図</h3><p>地図の読み方、コンパスなしで方角を知る方法。</p></div>
+      <div class="theme"><h3>応急手当</h3><p>止血、熱中症・低体温症への対応。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rule">
+  <div class="wrap">
+    <div class="rule">
+      <h2>最初に覚える「3の法則」</h2>
+      <p class="lead" style="margin-bottom:0">人が何もしないまま耐えられる目安です。優先順位を決めるときの考え方として、よく紹介されています。</p>
+      <ol>
+        <li><strong>3分</strong>空気がないとき</li>
+        <li><strong>3時間</strong>極端な暑さ・寒さの中</li>
+        <li><strong>3日</strong>水がないとき</li>
+        <li><strong>3週間</strong>食べ物がないとき</li>
+      </ol>
+      <p class="note">あくまで目安で、体調や環境によって大きく変わります。</p>
+    </div>
+  </div>
+</section>
+
+<section id="latest">
+  <div class="wrap">
+    <h2>最近の進捗</h2>
+    <p class="lead">ブログの最新の記録です。（以下はサンプルなので、自分の内容に書き換えてください）</p>
+    <ul class="log">
+      <li><time datetime="2026-10-01">2026.10.01</time><span>サイトを作り始めた。まずは「3の法則」から勉強する。</span></li>
+      <li><time datetime="2026-09-30">2026.09.30</time><span>水の浄化について調べた。煮沸の目安をノートにまとめた。</span></li>
+      <li><time datetime="2026-09-29">2026.09.29</time><span>火おこしの種類を整理。次は焚き付けの作り方を調べる。</span></li>
+    </ul>
+    <a class="more" href="blog.html">ブログをもっと見る</a>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="wrap">
+    <h2>サイトの案内</h2>
+    <div class="links">
+      <a href="blog.html"><h3>ブログ</h3><p>日付と一言の、勉強の記録。</p></a>
+      <a href="column.html"><h3>コラム</h3><p>漫画・イラスト・4コマと、軽い読み物。</p></a>
+      <a href="about.html"><h3>このサイトについて</h3><p>作った理由と、運営している人のこと。</p></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 サバイバル勉強ノート</span>
+    <span>学んだことを、自分の言葉で。</span>
+  </div>
+</footer>
+
+</body>
+</html>
