@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ブログ | サバイバル勉強ノート</title>
+<meta name="description" content="サバイバルの勉強の進捗を、日付と日記でつづる記録。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#008b8b;
+  --teal-deep:#00605f;
+  --teal-pale:#e3f4f3;
+  --paper:#f6fbfb;
+  --ink:#10302f;
+  --pine:#f5b82e;
+  --line:#b7dcdb;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;line-height:1.85;font-size:16px}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.site{background:var(--teal);color:#fff}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:900;font-size:1.1rem;text-decoration:none;letter-spacing:.04em}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.18)}
+nav a[aria-current="page"]{background:#fff;color:var(--teal-deep)}
+
+.title{background:var(--teal);color:#fff;padding:12px 0 64px;position:relative}
+.title h1{margin:0 0 6px;font-size:clamp(1.9rem,5vw,2.6rem);font-weight:900}
+.title p{margin:0;max-width:34em}
+.title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0,95% 60%,90% 10%,85% 70%,80% 20%,75% 75%,70% 15%,65% 70%,60% 10%,55% 65%,50% 15%,45% 70%,40% 20%,35% 75%,30% 15%,25% 70%,20% 10%,15% 65%,10% 15%,5% 70%,0 20%)}
+
+.feed{max-width:640px;margin:32px auto 0;padding:0;list-style:none;background:#fff;border:2px solid var(--teal);border-radius:20px;overflow:hidden}
+.post{display:grid;grid-template-columns:48px 1fr;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line)}
+.post:last-child{border-bottom:0}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--teal-pale);border:2px solid var(--line);display:grid;place-items:center}
+.avatar svg{width:30px;height:36px}
+.post time{display:block;font-weight:700;color:var(--teal-deep);font-size:.92rem;line-height:1.5}
+.post p{margin:4px 0 0;white-space:pre-line}
+
+.back{max-width:640px;margin:20px auto 0}
+.back a{font-weight:700;color:var(--teal-deep)}
+
+footer{margin-top:72px;background:var(--teal-deep);color:#e8f7f6;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .feed{margin-left:12px;margin-right:12px}
+  .post{grid-template-columns:40px 1fr;gap:10px;padding:14px}
+  .avatar{width:40px;height:40px}
+  .avatar svg{width:24px;height:29px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="mini-pine" viewBox="0 0 100 120">
+    <path d="M50 38 C42 22 46 10 50 2 C54 10 58 22 50 38Z" fill="#2e9e5b"/>
+    <path d="M47 40 C30 32 24 18 27 8 C40 14 47 26 47 40Z" fill="#35b36a"/>
+    <path d="M53 40 C70 32 76 18 73 8 C60 14 53 26 53 40Z" fill="#35b36a"/>
+    <ellipse cx="50" cy="78" rx="32" ry="40" fill="#f5b82e" stroke="#a96a12" stroke-width="3"/>
+    <path d="M26 58 L74 106 M26 78 L56 108 M44 44 L74 74 M74 58 L26 106 M74 78 L44 108 M56 44 L26 74" stroke="#c98412" stroke-width="2.5" fill="none"/>
+  </symbol>
+</svg>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">サバイバル勉強ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="title">
+  <div class="wrap">
+    <h1>ブログ</h1>
+    <p>勉強の進捗を、日付と日記で。新しい記録が上に並びます。</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- 新しい投稿は、下の <li class="post"> をコピーして一番上に追加してください -->
+  <ul class="feed">
+    <li class="post">
+      <div class="avatar"><svg aria-hidden="true"><use href="#mini-pine"/></svg></div>
+      <div>
+        <time datetime="2026-10-01">2026.10.01</time>
+        <p>サイトを作り始めた。まずは「3の法則」から勉強する。</p>
+      </div>
+    </li>
+    <li class="post">
+      <div class="avatar"><svg aria-hidden="true"><use href="#mini-pine"/></svg></div>
+      <div>
+        <time datetime="2026-09-30">2026.09.30</time>
+        <p>水の浄化について調べた。煮沸の目安をノートにまとめた。</p>
+      </div>
+    </li>
+    <li class="post">
+      <div class="avatar"><svg aria-hidden="true"><use href="#mini-pine"/></svg></div>
+      <div>
+        <time datetime="2026-09-29">2026.09.29</time>
+        <p>火おこしの種類を整理。次は焚き付けの作り方を調べる。</p>
+      </div>
+    </li>
+    <li class="post">
+      <div class="avatar"><svg aria-hidden="true"><use href="#mini-pine"/></svg></div>
+      <div>
+        <time datetime="2026-09-28">2026.09.28</time>
+        <p>シェルターは「場所選び」が大事らしい。風向きと地面の水はけを確認すること。</p>
+      </div>
+    </li>
+    <li class="post">
+      <div class="avatar"><svg aria-hidden="true"><use href="#mini-pine"/></svg></div>
+      <div>
+        <time datetime="2026-09-27">2026.09.27</time>
+        <p>勉強のテーマを6つに決めた。水・火・シェルター・食料・方角・応急手当。</p>
+      </div>
+    </li>
+  </ul>
+  <p class="back"><a href="index.html">ホームにもどる</a></p>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 サバイバル勉強ノート</span>
+    <span>学んだことを、自分の言葉で。</span>
+  </div>
+</footer>
+
+</body>
+</html>
