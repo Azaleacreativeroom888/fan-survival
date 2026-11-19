@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コラム | サバイバル勉強ノート</title>
+<meta name="description" content="サバイバルに関する漫画・イラスト・4コマと、小論文形式の軽いコラム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#008b8b;
+  --teal-deep:#00605f;
+  --teal-pale:#e3f4f3;
+  --paper:#f6fbfb;
+  --ink:#10302f;
+  --pine:#f5b82e;
+  --line:#b7dcdb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;line-height:1.85;font-size:16px}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.site{background:var(--teal);color:#fff}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:900;font-size:1.1rem;text-decoration:none;letter-spacing:.04em}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.18)}
+nav a[aria-current="page"]{background:#fff;color:var(--teal-deep)}
+
+.title{background:var(--teal);color:#fff;padding:12px 0 64px;position:relative}
+.title h1{margin:0 0 6px;font-size:clamp(1.9rem,5vw,2.6rem);font-weight:900}
+.title p{margin:0;max-width:34em}
+.title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0,95% 60%,90% 10%,85% 70%,80% 20%,75% 75%,70% 15%,65% 70%,60% 10%,55% 65%,50% 15%,45% 70%,40% 20%,35% 75%,30% 15%,25% 70%,20% 10%,15% 65%,10% 15%,5% 70%,0 20%)}
+
+section{padding:48px 0 8px}
+h2{font-size:1.6rem;margin:0 0 8px;font-weight:900;color:var(--teal-deep)}
+.lead{margin:0 0 24px;max-width:38em}
+.jump{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.jump a{padding:6px 16px;border:2px solid #fff;border-radius:999px;font-weight:700;text-decoration:none;font-size:.92rem}
+.jump a:hover{background:rgba(255,255,255,.18)}
+
+/* 漫画・イラスト */
+.works{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.work{background:#fff;border:2px solid var(--teal);border-radius:18px;padding:14px 14px 16px}
+.work h3{margin:10px 0 0;font-size:1rem;line-height:1.5}
+.work time{font-size:.85rem;color:var(--teal-deep);font-weight:700}
+.slot{aspect-ratio:1/1;border:2px dashed var(--line);border-radius:12px;background:var(--teal-pale);display:grid;place-items:center;text-align:center;color:var(--teal-deep);font-size:.85rem;font-weight:700;padding:8px}
+.work.yonkoma{grid-row:span 2}
+.yonkoma .panels{display:grid;gap:8px}
+.yonkoma .slot{aspect-ratio:5/3;position:relative}
+.yonkoma .slot b{position:absolute;top:6px;left:10px;font-size:1rem}
+
+/* 記事 */
+.articles{border-top:2px solid var(--teal);margin:0;padding:0;list-style:none}
+.articles li{padding:16px 4px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:7.5em 1fr;gap:12px}
+.articles time{font-weight:700;color:var(--teal-deep)}
+.articles a{font-weight:900;font-size:1.08rem;text-decoration:none}
+.articles a:hover{text-decoration:underline}
+.articles p{margin:2px 0 0;font-size:.95rem}
+
+article.essay{background:#fff;border:2px solid var(--teal);border-radius:20px;padding:28px 28px 20px;margin-top:36px;max-width:720px}
+article.essay h3{font-size:1.4rem;line-height:1.5;margin:0 0 4px}
+article.essay .meta{font-size:.88rem;color:var(--teal-deep);font-weight:700;margin:0 0 18px}
+article.essay h4{margin:22px 0 4px;font-size:1.05rem;color:var(--teal-deep);border-left:6px solid var(--pine);padding-left:10px}
+article.essay p{margin:0 0 10px}
+.sample{font-size:.88rem;margin-top:14px}
+
+footer{margin-top:72px;background:var(--teal-deep);color:#e8f7f6;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:720px){
+  .articles li{grid-template-columns:1fr;gap:2px}
+  article.essay{padding:22px 18px 14px}
+  .work.yonkoma{grid-row:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">サバイバル勉強ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="title">
+  <div class="wrap">
+    <h1>コラム</h1>
+    <p>サバイバルに関する漫画やイラスト、4コマ、それから小論文形式の軽い読み物を置いています。</p>
+    <div class="jump">
+      <a href="#works">漫画・イラスト</a>
+      <a href="#essays">読み物</a>
+    </div>
+  </div>
+</div>
+
+<section id="works">
+  <div class="wrap">
+    <h2>漫画・イラスト・4コマ</h2>
+    <p class="lead">勉強したことを絵にしたものです。画像を入れるときは、点線の枠を <code>&lt;img&gt;</code> に差し替えてください。</p>
+    <div class="works">
+      <div class="work yonkoma">
+        <div class="panels">
+          <div class="slot"><b>1</b>4コマ 1コマ目</div>
+          <div class="slot"><b>2</b>2コマ目</div>
+          <div class="slot"><b>3</b>3コマ目</div>
+          <div class="slot"><b>4</b>4コマ目</div>
+        </div>
+        <time datetime="2026-10-01">2026.10.01</time>
+        <h3>4コマ：はじめての火おこし（サンプル）</h3>
+      </div>
+      <div class="work">
+        <div class="slot">イラスト<br>ここに画像</div>
+        <time datetime="2026-09-30">2026.09.30</time>
+        <h3>イラスト：キャンプ用ナイフ（サンプル）</h3>
+      </div>
+      <div class="work">
+        <div class="slot">漫画<br>ここに画像</div>
+        <time datetime="2026-09-29">2026.09.29</time>
+        <h3>漫画：水を探す話（サンプル）</h3>
+      </div>
+      <div class="work">
+        <div class="slot">イラスト<br>ここに画像</div>
+        <time datetime="2026-09-28">2026.09.28</time>
+        <h3>イラスト：シェルターの図（サンプル）</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="essays">
+  <div class="wrap">
+    <h2>読み物（小論文）</h2>
+    <p class="lead">勉強して考えたことを、短い小論文の形でまとめます。</p>
+    <ul class="articles">
+      <li>
+        <time datetime="2026-10-01">2026.10.01</time>
+        <div><a href="#essay1">「3の法則」は、なぜ優先順位の考え方になるのか</a><p>空気・体温・水・食べ物。命に関わる順番を考えます。</p></div>
+      </li>
+    </ul>
+
+    <article class="essay" id="essay1">
+      <h3>「3の法則」は、なぜ優先順位の考え方になるのか</h3>
+      <p class="meta">2026.10.01（サンプル記事）</p>
+
+      <h4>はじめに</h4>
+      <p>サバイバルの入門でよく出てくる「3の法則」は、3分・3時間・3日・3週間という数字で、何がなくなると危ないかを表した目安です。数字そのものより、順番に意味があると考えました。</p>
+
+      <h4>考えたこと</h4>
+      <p>空気は3分、極端な暑さや寒さは3時間、水は3日、食べ物は3週間。この順に、猶予が短い方から並んでいます。つまり「いちばん早く困ることから先に手を打つ」という行動の順番を、覚えやすい形にしたものだと思います。</p>
+      <p>たとえば山で道に迷ったとき、空腹が気になっても、先に考えるのは寝床や服で体温を守ることです。食べ物の確保はその後で間に合います。</p>
+
+      <h4>おわりに</h4>
+      <p>数字は人や環境で変わる目安にすぎません。それでも「何を先にするか」を決める軸があるだけで、あわてたときの助けになります。次は、水の確保について同じように考えてみます。</p>
+    </article>
+    <p class="sample">※ここはサンプル記事です。新しい記事は <code>&lt;article class="essay"&gt;</code> をコピーして書き換え、上の一覧にも1行足してください。</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 サバイバル勉強ノート</span>
+    <span>学んだことを、自分の言葉で。</span>
+  </div>
+</footer>
+
+</body>
+</html>
