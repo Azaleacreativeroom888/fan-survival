@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて | サバイバル勉強ノート</title>
+<meta name="description" content="サバイバル勉強ノートについて、運営者のリンク集、お問い合わせフォーム。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#008b8b;
+  --teal-deep:#00605f;
+  --teal-pale:#e3f4f3;
+  --paper:#f6fbfb;
+  --ink:#10302f;
+  --pine:#f5b82e;
+  --line:#b7dcdb;
+  --err:#b3261e;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Yu Gothic",sans-serif;line-height:1.85;font-size:16px}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--pine);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+header.site{background:var(--teal);color:#fff}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:14px;padding-bottom:14px}
+.brand{font-weight:900;font-size:1.1rem;text-decoration:none;letter-spacing:.04em}
+nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:6px 14px;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.18)}
+nav a[aria-current="page"]{background:#fff;color:var(--teal-deep)}
+
+.title{background:var(--teal);color:#fff;padding:12px 0 64px;position:relative}
+.title h1{margin:0 0 6px;font-size:clamp(1.9rem,5vw,2.6rem);font-weight:900}
+.title p{margin:0;max-width:34em}
+.title::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:36px;background:var(--paper);clip-path:polygon(0 100%,100% 100%,100% 0,95% 60%,90% 10%,85% 70%,80% 20%,75% 75%,70% 15%,65% 70%,60% 10%,55% 65%,50% 15%,45% 70%,40% 20%,35% 75%,30% 15%,25% 70%,20% 10%,15% 65%,10% 15%,5% 70%,0 20%)}
+
+section{padding:48px 0 8px}
+h2{font-size:1.6rem;margin:0 0 8px;font-weight:900;color:var(--teal-deep)}
+h3.group{font-size:1rem;margin:28px 0 12px;color:var(--teal-deep);display:flex;align-items:center;gap:12px}
+h3.group::after{content:"";flex:1;height:2px;background:var(--line)}
+.lead{margin:0 0 20px;max-width:38em}
+
+.about{background:var(--teal-pale);border-radius:20px;padding:24px 28px;max-width:720px}
+.about p{margin:0 0 10px}
+.about p:last-child{margin:0}
+
+.link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.link-card{display:flex;align-items:center;gap:12px;text-decoration:none;background:#fff;border:2px solid var(--teal);border-radius:16px;padding:14px 18px}
+.link-card:hover{background:var(--teal);color:#fff}
+.link-card .t{flex:1;min-width:0}
+.link-card strong{display:block;font-size:1rem;line-height:1.5}
+.link-card span.d{display:block;font-size:.85rem;line-height:1.5}
+.link-card .arrow{font-weight:900;font-size:1.3rem;color:var(--teal)}
+.link-card:hover .arrow{color:var(--pine)}
+
+.form-card{background:#fff;border:2px solid var(--teal);border-radius:20px;padding:26px 28px;max-width:640px}
+.form-card .intro{margin:0 0 20px}
+.field{margin-bottom:18px}
+label{display:block;font-weight:700;margin-bottom:4px}
+.req{color:var(--err)}
+input[type=text],input[type=email],textarea{width:100%;font:inherit;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-radius:12px;padding:10px 14px}
+input:focus,textarea:focus{border-color:var(--teal);outline:none;box-shadow:0 0 0 3px rgba(0,139,139,.2)}
+textarea{min-height:150px;resize:vertical}
+button.send{font:inherit;font-weight:900;background:var(--pine);color:var(--ink);border:0;border-radius:999px;padding:10px 30px;cursor:pointer}
+button.send:hover{background:#ffd05a}
+button.send:disabled{opacity:.55;cursor:not-allowed}
+.msg{border-radius:12px;padding:12px 16px;margin-bottom:16px;font-weight:700}
+.msg.ok{background:var(--teal-pale);color:var(--teal-deep);border:2px solid var(--teal)}
+.msg.ng{background:#fdecea;color:var(--err);border:2px solid var(--err)}
+.msg[hidden]{display:none}
+
+.back{display:inline-block;margin-top:24px;font-weight:700;color:var(--teal-deep)}
+
+footer{margin-top:72px;background:var(--teal-deep);color:#e8f7f6;padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer .notice{flex-basis:100%;font-size:.8rem;line-height:1.8;opacity:.9;margin:0}
+
+@media (max-width:720px){
+  .form-card,.about{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">サバイバル勉強ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">ブログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html" aria-current="page">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="title">
+  <div class="wrap">
+    <h1>このサイトについて</h1>
+    <p>サイトの紹介、運営者のリンク、お問い合わせフォームをまとめています。</p>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2>サバイバル勉強ノートとは</h2>
+    <div class="about">
+      <p>サバイバルの知識を、自分のペースで勉強していくための記録サイトです。火・水・寝床・食べ物・方角・応急手当を、順番に学んでいます。</p>
+      <p>勉強の進捗は「ブログ」に、漫画やイラスト、考えたことをまとめた読み物は「コラム」に置いています。</p>
+      <p>運営：Azalea72（漫画とイラストを描いています）</p>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="wrap">
+    <h2>リンク</h2>
+
+    <h3 class="group">漫画・イラスト掲載サイト</h3>
+    <div class="link-grid">
+      <a class="link-card" href="https://rookie.shonenjump.com/users/14728546961183734555" target="_blank" rel="noopener">
+        <div class="t"><strong>ジャンプルーキー</strong><span class="d">オリジナル漫画を掲載中</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link-card" href="https://www.pixiv.net/users/105728284" target="_blank" rel="noopener">
+        <div class="t"><strong>Pixiv</strong><span class="d">二次創作はこちらに掲載</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+
+    <h3 class="group">SNS・その他</h3>
+    <div class="link-grid">
+      <a class="link-card" href="https://bsky.app/profile/azaleaazalea88.bsky.social" target="_blank" rel="noopener">
+        <div class="t"><strong>Bluesky</strong><span class="d">近況・作品のお知らせ</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/@LilyPopins0512" target="_blank" rel="noopener">
+        <div class="t"><strong>YouTube（リリポピ）</strong><span class="d">動画チャンネル</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link-card" href="https://lilipopi.github.io/lilypopins/" target="_blank" rel="noopener">
+        <div class="t"><strong>リリポピのホームページ</strong><span class="d">別サイト</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+
+    <h3 class="group">Azalea72のホームページ</h3>
+    <div class="link-grid">
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/storyreviewazalea/" target="_blank" rel="noopener">
+        <div class="t"><strong>書評サイト</strong><span class="d">本・アニメ・映画・ゲーム・小説の備忘録</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-english/" target="_blank" rel="noopener">
+        <div class="t"><strong>英語サイト（English Site）</strong><span class="d">英語話者と英語学習者に向けたサイト</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+      <a class="link-card" href="https://azaleacreativeroom888.github.io/fan-watercolor/" target="_blank" rel="noopener">
+        <div class="t"><strong>水彩画サイト</strong><span class="d">水彩画掲載</span></div><span class="arrow" aria-hidden="true">›</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>お問い合わせフォーム</h2>
+    <div class="form-card">
+      <p class="intro">ご質問・ご感想などはこちらからどうぞ。<br>Gmailで受け取り、返信いたします。</p>
+
+      <div id="ok" class="msg ok" role="status" hidden>メッセージを送信しました。ありがとうございます！</div>
+      <div id="ng" class="msg ng" role="alert" hidden>送信できませんでした。時間をおいて、もう一度お試しください。</div>
+
+      <form id="contact-form" action="https://formspree.io/f/maqvpvoz" method="POST">
+        <div class="field">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" autocomplete="name" placeholder="お名前（ニックネームでもOK）">
+        </div>
+        <div class="field">
+          <label for="email">メールアドレス <span class="req">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="example@email.com" required>
+        </div>
+        <div class="field">
+          <label for="message">メッセージ <span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="メッセージを入力してください…" required></textarea>
+        </div>
+        <button class="send" type="submit">送信する</button>
+      </form>
+    </div>
+    <a class="back" href="index.html">ホームにもどる</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 サバイバル勉強ノート</span>
+    <span>学んだことを、自分の言葉で。</span>
+    <p class="notice">当サイトに掲載されている画像・文章・作品について、AI学習への利用、トレース（トレパク）、無断転載、二次利用を禁止します。<br>Please refrain from using any images, text, or works on this website for AI training, tracing, unauthorized reproduction, redistribution, or secondary use.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form=document.getElementById('contact-form');
+  var ok=document.getElementById('ok');
+  var ng=document.getElementById('ng');
+  var btn=form.querySelector('button');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    ok.hidden=true; ng.hidden=true; btn.disabled=true;
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){
+        if(r.ok){ ok.hidden=false; form.reset(); } else { ng.hidden=false; }
+      })
+      .catch(function(){ ng.hidden=false; })
+      .then(function(){ btn.disabled=false; });
+  });
+})();
+</script>
+
+</body>
+</html>
